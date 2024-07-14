@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ["*"]
 
 # LOGIN_URL = "http://127.0.0.1:8000/frontend/login.html"
 
-AUTH_USER_MODEL = "accounts.CustomUser"
+# AUTH_USER_MODEL = "accounts.CustomUser"
 CORS_ALLOW_ALL_ORIGINS = True
 
 CSRF_TRUSTED_ORIGINS = [

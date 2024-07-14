@@ -2,7 +2,6 @@ from dj_rest_auth.registration.serializers import RegisterSerializer
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
-from allauth.account.models import EmailAddress
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.http import urlsafe_base64_decode
 from django.utils.encoding import force_str
@@ -14,9 +13,9 @@ from django.template.loader import render_to_string
 from django.urls import reverse
 from e_school import settings
 from django.core.mail import EmailMultiAlternatives
+from django.contrib.auth.models import User
+from .models import CustomUser
 
-
-User = get_user_model()
 
 # must add this in settings.py
 
@@ -53,6 +52,7 @@ class CustomRegisterSerializer(RegisterSerializer):
         user.last_name = self.cleaned_data.get('last_name')
         user.is_active = False
         user.save()
+        CustomUser.objects.create(user=user,user_type=user.user_type)
         self.send_confirmation_email(user)
         return user
 
@@ -73,6 +73,7 @@ class CustomRegisterSerializer(RegisterSerializer):
 
     
 class CustomUserSerializer(serializers.ModelSerializer):
+    user_type = serializers.CharField(source='custom_user.user_type',required=True)
     class Meta:
         model = User
         fields = ('id', 'username', 'email', 'first_name', 'last_name', 'user_type')
