@@ -16,8 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from course import views
-from allauth.account.views import confirm_email
+# from course import views
+# from allauth.account.views import confirm_email
 from accounts.views import UserUpdateView
 from accounts.views import CustomConfirmEmailView,account_inactive
 
