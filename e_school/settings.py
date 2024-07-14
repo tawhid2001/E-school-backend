@@ -37,7 +37,7 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 CORS_ALLOW_ALL_ORIGINS = True
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://e-school-frontend.onrender.com',
+    'https://e-school-backend.onrender.com/',
 ]
 
 
