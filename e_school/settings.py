@@ -114,7 +114,7 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = env("EMAIL")
 EMAIL_HOST_PASSWORD = env("EMAIL_PASSWORD")
-SITE_URL = 'http://127.0.0.1:8000' 
+SITE_URL = 'https://e-school-backend.onrender.com/' 
 SITE_ID=1
 
 # Database
