@@ -1,0 +1,26 @@
+from django.db import models
+from django.conf import settings
+from department.models import Department
+
+
+class Course(models.Model):
+    course_name = models.CharField(max_length=200)
+    course_code = models.CharField(max_length=200, unique=True)
+    description = models.TextField()
+    teacher = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    department = models.ForeignKey(Department, related_name='courses', on_delete=models.CASCADE,default=None)
+    created_at = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(max_length=200, unique=True, blank=True)
+
+    def __str__(self):
+        return self.course_name
+
+class Lesson(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    course = models.ForeignKey(Course, related_name='lessons', on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
