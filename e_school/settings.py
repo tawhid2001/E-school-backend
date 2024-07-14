@@ -184,9 +184,9 @@ REST_AUTH_SERIALIZERS = {
     'USER_EDIT_SERIALIZER' : 'accounts.serializers.UserUpdateSerializer'
 }
 
-# AUTHENTICATION_BACKENDS = (
-#     'allauth.account.auth_backends.AuthenticationBackend',
-# )
+AUTHENTICATION_BACKENDS = (
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
