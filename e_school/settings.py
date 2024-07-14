@@ -181,6 +181,7 @@ REST_AUTH_REGISTER_SERIALIZERS = {
 
 REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'accounts.serializers.CustomUserSerializer',
+    'USER_EDIT_SERIALIZER' : 'accounts.serializers.UserUpdateSerializer'
 }
 
 # AUTHENTICATION_BACKENDS = (
@@ -189,4 +190,3 @@ REST_AUTH_SERIALIZERS = {
 
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-LOGIN_REDIRECT_URL = '/'
