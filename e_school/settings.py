@@ -31,7 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-LOGIN_URL = "http://127.0.0.1:8000/frontend/login.html"
+# LOGIN_URL = "http://127.0.0.1:8000/frontend/login.html"
 
 AUTH_USER_MODEL = "accounts.CustomUser"
 CORS_ALLOW_ALL_ORIGINS = True
@@ -183,9 +183,9 @@ REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'accounts.serializers.CustomUserSerializer',
 }
 
-AUTHENTICATION_BACKENDS = (
-    'allauth.account.auth_backends.AuthenticationBackend',
-)
+# AUTHENTICATION_BACKENDS = (
+#     'allauth.account.auth_backends.AuthenticationBackend',
+# )
 
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
