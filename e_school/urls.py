@@ -29,7 +29,7 @@ urlpatterns = [
     path('api-auth/', include("rest_framework.urls")),
      path('api/auth/user/update/', UserUpdateView.as_view(), name='rest_user_update'),
     path('api/auth/', include("dj_rest_auth.urls")),
-    path('api/auth/registration/accountconfirmemail/<str:key>/', CustomConfirmEmailView.as_view(), name='account_confirm_email'),
+    path('api/auth/registration/account-confirm-email/<str:key>/', CustomConfirmEmailView.as_view(), name='account_confirm_email'),
     path('account/inactive/', account_inactive, name="account_inactive"),
     path('api/auth/registration/', include("dj_rest_auth.registration.urls")),
     path("api/auth/", include("django.contrib.auth.urls")),
