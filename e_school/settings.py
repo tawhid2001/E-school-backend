@@ -186,3 +186,7 @@ REST_AUTH_SERIALIZERS = {
 # AUTHENTICATION_BACKENDS = (
 #     'allauth.account.auth_backends.AuthenticationBackend',
 # )
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+LOGIN_REDIRECT_URL = '/'
