@@ -36,6 +36,11 @@ LOGIN_URL = "http://127.0.0.1:8000/frontend/login.html"
 AUTH_USER_MODEL = "accounts.CustomUser"
 CORS_ALLOW_ALL_ORIGINS = True
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://e-school-frontend.onrender.com',
+]
+
+
 
 # Application definition
 
