@@ -1,0 +1,17 @@
+1 .   Course Mobile No : 01627401785
+
+2 .   Result of course mobile phone no % 18 :  5
+
+3 .   Unique Name of your project : Enlighten e-school
+
+4 .   Backend Project Github  Repository  Link: https://github.com/tawhid2001/E-school-backend
+
+5 .   Backend Project Live  Link:
+
+6 .   Frontend Project Github  Repository  Link: https://github.com/tawhid2001/E-School-frontend
+
+7 .   Frontend Project Live  Link:
+
+8 .   Admin username : ryan
+
+9 .   Admin password : 123

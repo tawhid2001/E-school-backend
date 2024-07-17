@@ -1,5 +1,5 @@
 from django.db import models
-from accounts.models import CustomUser
+from django.conf import settings
 from department.models import Department
 
 
@@ -7,7 +7,7 @@ class Course(models.Model):
     course_name = models.CharField(max_length=200)
     course_code = models.CharField(max_length=200, unique=True)
     description = models.TextField()
-    teacher = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    teacher = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     department = models.ForeignKey(Department, related_name='courses', on_delete=models.CASCADE,default=None)
     created_at = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(max_length=200, unique=True, blank=True)

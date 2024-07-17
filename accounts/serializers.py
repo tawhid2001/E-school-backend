@@ -13,8 +13,7 @@ from django.template.loader import render_to_string
 from django.urls import reverse
 from e_school import settings
 from django.core.mail import EmailMultiAlternatives
-from django.contrib.auth.models import User
-from .models import CustomUser
+
 
 
 # must add this in settings.py
@@ -22,6 +21,8 @@ from .models import CustomUser
 # REST_AUTH_REGISTER_SERIALIZERS = {
 #     'REGISTER_SERIALIZER': 'accounts.serializers.CustomRegisterSerializer',
 # }
+
+User = get_user_model()
 
 class UserUpdateSerializer(serializers.ModelSerializer):
     class Meta:
@@ -52,7 +53,6 @@ class CustomRegisterSerializer(RegisterSerializer):
         user.last_name = self.cleaned_data.get('last_name')
         user.is_active = False
         user.save()
-        CustomUser.objects.create(user=user,user_type=user.user_type)
         self.send_confirmation_email(user)
         return user
 
@@ -73,7 +73,6 @@ class CustomRegisterSerializer(RegisterSerializer):
 
     
 class CustomUserSerializer(serializers.ModelSerializer):
-    user_type = serializers.CharField(source='custom_user.user_type',required=True)
     class Meta:
         model = User
         fields = ('id', 'username', 'email', 'first_name', 'last_name', 'user_type')
