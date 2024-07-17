@@ -16,7 +16,7 @@ class Enrollment(models.Model):
 
 class LessonProgress(models.Model):
     student = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    lesson = models.ForeignKey(Lesson, related_name='progress', on_delete=models.CASCADE, unique=True)
+    lesson = models.OneToOneField(Lesson, related_name='progress', on_delete=models.CASCADE, unique=True)
     completed = models.BooleanField(default=False)
     completion_date = models.DateTimeField(null=True, blank=True)
 
